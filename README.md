@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# GreenGram — Waste, Reimagined
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An immersive, scroll-driven product experience for **GreenGram**, a concept smart bin designed to make waste segregation feel intelligent, tangible, and a little cinematic.
 
-Currently, two official plugins are available:
+The site tells the product story through a real-time 3D bin, ambient UI, and motion-rich chapters: from the cost of contamination to a connected circular-economy future.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![GreenGram product visual](src/assets/hero.png)
 
-## React Compiler
+## What’s inside
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- A scroll-synchronised, real-time 3D smart-bin scene built with React Three Fiber
+- Animated lid movement, LED glow, cinematic lighting, bloom, and camera choreography
+- Smooth scrolling and chapter transitions powered by Lenis, GSAP, and Framer Motion
+- A dark, editorial interface with glass panels, telemetry widgets, film grain, and a custom cursor trail
+- Fully responsive landing-page experience, built with React, TypeScript, Vite, and Tailwind CSS
 
-## Expanding the ESLint configuration
+## The idea
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+GreenGram imagines a dual-chamber bin that separates wet organics from dry recyclables at the source. The experience explores the product’s hardware, sensor-driven measurements, user incentives, and potential for a city-scale waste network.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> This repository is a front-end concept/prototype. The hardware data, telemetry, and rewards shown in the experience are illustrative.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Area | Tools |
+| --- | --- |
+| App | React 19, TypeScript, Vite |
+| 3D | Three.js, React Three Fiber, Drei |
+| Motion | Framer Motion, GSAP + ScrollTrigger, Lenis |
+| Visual effects | React Three Postprocessing, Bloom |
+| Styling | Tailwind CSS |
+
+## Run it locally
+
+**Prerequisites:** Node.js 20+ and npm.
+
+```bash
+git clone https://github.com/ganenakarthik/motors.git
+cd motors
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Vite will print the local URL (usually `http://localhost:5173`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Useful commands
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev      # start the development server
+npm run build    # type-check and build for production
+npm run preview  # preview the production build
+npm run lint     # run ESLint
 ```
+
+## Project structure
+
+```text
+src/
+├── App.tsx                     # Scroll-story, layout, and motion chapters
+├── components/
+│   ├── SmartBin.tsx            # The 3D dual-chamber bin model
+│   ├── SmartBinScene.tsx       # Scroll-to-3D scene choreography
+│   └── CustomCursor.tsx        # Cursor and particle-trail interaction
+└── assets/                     # Project visuals
+```
+
+## Experience notes
+
+For the full effect, view on a desktop or laptop with hardware acceleration enabled. The scene is still responsive, but the custom cursor and dense visual layers are deliberately designed for a pointer-driven screen.
+
+## License
+
+No license has been specified yet. All rights reserved unless the project owner adds a license file.
+ 
+ Made by "Rex"
